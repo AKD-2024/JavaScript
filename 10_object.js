@@ -54,10 +54,67 @@ user.greeting = function() {
 }
 
 console.log(user.gender); // female
-console.log(user.greeting()); /* Hello user, anjali! 
+console.log(user.greeting()); /* Hello user, Anjali ! 
  1 */
 
+// ---------------- object : part-2 ------------------
 
+// const candyCrushUser = new Object(); // {} -- singleton object
+const candyCrushUser = {}; // {} -- Not a singleton object
+candyCrushUser.id = "cc01";
+candyCrushUser.name = "Anjali";
+candyCrushUser.isLoggedIn = false;
+console.log(candyCrushUser); // { id: 'cc01', name: 'Anjali', isLoggedIn: false }
 
+const regularUser = {
+  email: "anjalidubey@compro.com",
+  fullname: {
+    userfullname: {
+      firstname: "anjali",
+      lastname: "dubey"
+    }
+  }
+}
+console.log(regularUser.fullname.userfullname.firstname); //anjali
 
+const obj1 = {1: "a", 2: "b"};
+const obj2 = {3: "a", 4: "b"};
+const obj3 = {5: "a", 6: "b"};
 
+// const obj4 = {obj1, obj2, obj3}; // wrong way to combine as it will create object of objects 
+// console.log(obj4); 
+/*
+{
+  obj1: { '1': 'a', '2': 'b' },
+  obj2: { '3': 'a', '4': 'b' },
+  obj3: { '5': 'a', '6': 'b' }
+} */
+
+// Object.assign(source, target); -- correct way to combine multiple objects
+// const obj4 = Object.assign({}, obj1, obj2, obj3);
+// console.log(obj4); // { '1': 'a', '2': 'b', '3': 'a', '4': 'b', '5': 'a', '6': 'b' }
+
+// Popular way to combine multiple objects using spread operator
+const obj4 = {...obj1, ...obj2, ...obj3};
+console.log(obj4); // { '1': 'a', '2': 'b', '3': 'a', '4': 'b', '5': 'a', '6': 'b' }
+
+const users = [
+  {
+    id: 1,
+    email: "anjali@gmail.com"
+  },
+  {
+    id: 2,
+    email: "amit@gmail.com"
+  }
+];
+
+console.log(users[0].email); // anjali@gmail.com 
+
+// ---------- important thing -----------
+console.log(candyCrushUser); // { id: 'cc01', name: 'Anjali', isLoggedIn: false }
+console.log(Object.keys(candyCrushUser)); // returns array of object's keys -- [ 'id', 'name', 'isLoggedIn' ] 
+console.log(Object.values(candyCrushUser)); // returns array of object's values -- [ 'cc01', 'Anjali', false ]
+
+console.log(candyCrushUser.hasOwnProperty('isLoggedIn')); // true
+console.log(candyCrushUser.hasOwnProperty('phone')); // false

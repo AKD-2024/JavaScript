@@ -13,8 +13,49 @@ if(true) {
 let a = 300;
 if(true) {
     let a = 90;
-    console.log("Inner: ", a); // Inner: 90
+    // console.log("Inner: ", a); // Inner: 90
 }
 
-console.log("Outer: ", a); // Outer: 300
+// console.log("Outer: ", a); // Outer: 300
 
+function outer() {
+    const username = "Anjali";
+    function inner() {
+        const website = "anjali.vercel.app";
+        console.log(username); // Anjali-- inner function can access outer scope -- closure
+    }
+    // console.log(website); // error - outer function can't accesss inner function variables
+    inner();
+}
+
+outer();
+
+if(true) {
+    const username = "anjali";
+    if(username === "anjali") {
+        const website = ".dubey@compro.com";
+        console.log(username + website); // anjali.dubey@compro.com
+    }
+    // console.log(website); // error
+}
+// console.log(username); // error
+
+// --------------------- Interesting ---------------------
+
+//normal function -- Hoisting allowed
+console.log(sum(4,5)); //9
+function sum(num1, num2) {
+    return num1+num2;
+}
+
+//function expression -- Hoisting not allowed
+console.log(sum1(5,6)); // error
+const sum1 = function(num1, num2) {
+    return num1+num2;
+}
+
+//Arrow function -- Hoisting not allowed
+console.log(sum2(15, 6)); //error
+const sum2 = (num1, num2) => {
+  return num1 + num2;
+};

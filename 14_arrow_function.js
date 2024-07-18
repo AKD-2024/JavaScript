@@ -41,7 +41,7 @@ console.log(this); // {} : node -- [important: browser: global-object: window]
 
 // const something = () => {
 //     let user = "anjali";
-//     console.log(this); //undefined
+//     console.log(this.user); //undefined
 // }
 // something(); -- arrow function
 

@@ -20,3 +20,31 @@ console.log(a); // 2
 
 console.log(b); // undefined as only variable declaration is moved to the top of their scope
 var b = 2;
+
+// Closure 
+// for (var i = 1; i <= 5; i++) {
+//   (function(i) {
+//     setTimeout(function timer() {
+//     console.log(i);
+//   }, i * 1000);
+// })(i);
+// }
+
+// for (let i = 1; i <= 5; i++) {
+//   setTimeout(function timer() {
+//     console.log(i);
+//   }, i * 1000);
+// }
+
+// Lexical Scope
+function foo() {
+  console.log(a); // 2
+}
+
+function bar() {
+  var a = 3;
+  foo();
+}
+
+var a = 2;
+bar();

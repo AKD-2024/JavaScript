@@ -43,4 +43,33 @@ for(const [key, value] of map) {
 // FR :- France
 // USA :- United States of America
 
+// 2. forEach
+const languages = ["cpp", "python", "swift", "ruby", "javascript"];
+
+languages.forEach((item) => {
+  console.log(item);
+});
+
+languages.forEach((item, index, arr) => {
+  console.log(item, index, arr);
+});
+
+const codingLang = [
+  {
+    languageName: "javascript",
+    languageFileName: "js"
+  },
+  {
+    languageName: "java",
+    languageFileName: "java"
+  },
+  {
+    languageName: "python",
+    languageFileName: "py"
+  }
+]
+
+codingLang.forEach((item) => {
+  console.log(item.languageFileName);
+});
 

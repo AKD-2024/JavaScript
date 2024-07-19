@@ -49,10 +49,24 @@ const languages = ["cpp", "python", "swift", "ruby", "javascript"];
 languages.forEach((item) => {
   console.log(item);
 });
+/*
+cpp
+python
+swift
+ruby
+javascript
+*/
 
 languages.forEach((item, index, arr) => {
   console.log(item, index, arr);
 });
+/*
+cpp 0 [ 'cpp', 'python', 'swift', 'ruby', 'javascript' ]
+python 1 [ 'cpp', 'python', 'swift', 'ruby', 'javascript' ]
+swift 2 [ 'cpp', 'python', 'swift', 'ruby', 'javascript' ]
+ruby 3 [ 'cpp', 'python', 'swift', 'ruby', 'javascript' ]
+javascript 4 [ 'cpp', 'python', 'swift', 'ruby', 'javascript' ]
+*/ 
 
 const codingLang = [
   {
@@ -73,3 +87,8 @@ codingLang.forEach((item) => {
   console.log(item.languageFileName);
 });
 
+/*
+js
+java
+py
+*/ 

@@ -149,6 +149,4 @@ let scoreVal = 1;
 do {
   console.log(scoreVal);
 } while(scoreVal > 5);
-/*
-1
-*/
+// 1

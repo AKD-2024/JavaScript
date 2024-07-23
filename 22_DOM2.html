@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div> <!-- line 17 to line 22 (if we check parent.childNodes it returns a NodeList of 9 elements It should have returned 4 elements nodelist but instead it returns 9 as it consider enter as text node)  -->
+</body>
+<script>
+    const parent = document.querySelector(".parent");
+    console.log(parent);
+    console.log(parent.children); // HTMLCollection
+    console.log(parent.children[1].innerHTML); // Tuesday
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+    }
+    // Monday
+    // Tuesday
+    // Wednesday
+    // Thursday
+
+    parent.children[1].style.color = "orange"; // changes the color of Tuesday to orange
+    console.log(parent.firstElementChild); // return first element : <div class="day" style="color: pink;">Monday</div>
+    console.log(parent.lastElementChild); // return last element
+
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne); // return first element -- Monday 
+    dayOne.style.color = "pink"; //changing the first element color to pink
+    console.log(dayOne.parentElement); // return the parent of the element
+    console.log(dayOne.nextElementSibling); // return the next element -- Tuesday 
+
+    console.log("NODES: ", parent.childNodes);
+</script>
+
+</html>

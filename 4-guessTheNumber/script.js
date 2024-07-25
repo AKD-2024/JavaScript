@@ -79,6 +79,7 @@ function newGame() {
     guessSlot.innerHTML = ``;
     userInput.removeAttribute('disabled');
     startOver.removeChild(p);
+    displayMessage('');
     playGame = true;
   });
 }

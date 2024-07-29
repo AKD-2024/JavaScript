@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+        }
+        .card {
+            height: 24rem;
+            width: 24rem;
+            background-color: white;
+            color: #212121;
+            border-radius: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card"></div>
+</body>
+<script>
+    const card = document.querySelector('.card');
+    const requestURL = 'https://api.github.com/users/akd-2024';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL);
+    xhr.onreadystatechange = function() {
+        // console.log(xhr.readyState);
+        if(xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText); // to convert string to JSON
+            // console.log(data);
+            const followers = data.followers;
+            const profilePic = data.avatar_url; 
+
+            const img = document.createElement('img');
+            img.setAttribute('src', profilePic);
+            img.setAttribute('alt', 'profile pic');
+            img.setAttribute('width', '200rem');
+            img.setAttribute('height', '200rem');
+            card.appendChild(img);
+
+            const followersCount = document.createElement('h3');
+            followersCount.textContent = `Followers: ${followers}`;
+            card.appendChild(followersCount);
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
+
+<!-- 
+The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
+
+Value   State                       Description
+0       UNSENT              Client has been created. open() not called yet
+1       OPENED              open() has been called
+2       HEADERS_RECEIVED    send() has been called, and headers and status are available
+3       LOADING             Downloading responseText holds partial data
+4       DONE                The operation is complete 
+-->

@@ -2,7 +2,7 @@
 // Promises creation
 const promiseOne = new Promise(function(resolve, reject) {
     // Do any async task
-    // DB calls, cryptography, network
+    // DB calls, cryptography, network calls
     setTimeout(function() {
         console.log("Async task is complete");
         resolve();

@@ -1,3 +1,5 @@
+// ----- Random Notes -----
+
 // Hoisting - Order of Precedence
 
 var bool = true;

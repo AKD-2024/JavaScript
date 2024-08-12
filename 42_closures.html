@@ -10,7 +10,6 @@
     <button id="green">Green</button>
   </body>
   <script>
-
     // function init() {
     //     let name = "Mozilla";
     //     function displayName() {
@@ -18,25 +17,24 @@
     //     }
     //     displayName();
     // }
-    // init();
+    // init(); // Mozilla
 
     // function outer(){
-    //     let username = "hitesh"
-    //     console.log("OUTER", secret);
+    //     let username = "anjali"
+    //     console.log("OUTER", secret); // error
     //     function inner(){
     //         let secret = "my123"
-    //         console.log("inner", username);
+    //         console.log("inner", username); // inner anjali
     //     }
     //     function innerTwo(){
-    //         console.log("innerTwo", username);
-    //         console.log(secret);
+    //         console.log("innerTwo", username); // innerTwo anjali
+    //         console.log(secret);// error
     //     }
-    //     inner()
-    //     innerTwo()
-
+    //     inner();
+    //     innerTwo();
     // }
-    // outer()
-    // console.log("TOO OUTER", username);
+    // outer();
+    // console.log("TOO OUTER", username); // error
 
     // function makeFunc() {
     //     const name = "Mozilla";
@@ -47,7 +45,7 @@
     // }
 
     // const myFunc = makeFunc();
-    // myFunc();
+    // myFunc(); // Mozilla
   </script>
   <script>
     // document.getElementById("orange").onclick = function(){
@@ -59,13 +57,11 @@
 
     function clickHandler(color) {
       // document.body.style.backgroundColor = `${color}`
-
       return function () {
         document.body.style.backgroundColor = `${color}`;
       };
     }
     document.getElementById("orange").onclick = clickHandler("orange");
     document.getElementById("green").onclick = clickHandler("green");
-    
   </script>
 </html>
